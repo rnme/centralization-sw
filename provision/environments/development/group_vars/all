@@ -1,3 +1,4 @@
 ---
 project_root: /vagrant
 runtime_environment: development
+docker_user: vagrant
