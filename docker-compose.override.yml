@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  dashboard:
+    volumes:
+      - ./dashboard:/dashboard
+
+  dashboard-initializer:
+    volumes:
+      - ./dashboard:/dashboard
+
+  receiver:
+    command: ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
+    environment:
+      FLASK_APP: receiver.py
+      FLASK_ENV: development
+    volumes:
+      - ./receiver:/app
+
+  watchdog:
+    volumes:
+      - ./watchdog:/app

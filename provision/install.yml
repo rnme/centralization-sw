@@ -1,0 +1,24 @@
+---
+- hosts: monitoring_servers
+  roles:
+    - role: crivetimihai.virtualization.docker
+      docker_users:
+        - vagrant
+  tasks:
+    - name: Download Docker Compose
+      shell: "curl -L \"https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose"
+      args:
+        creates: /usr/local/bin/docker-compose
+      become: yes
+
+    - name: Make Docker Compose executable
+      file:
+        path: /usr/local/bin/docker-compose
+        mode: u=rwx,g=rx,o=rx
+      become: yes
+
+    - name: Install InfluxDB client
+      apt:
+        name: influxdb-client
+        state: present
+      become: yes

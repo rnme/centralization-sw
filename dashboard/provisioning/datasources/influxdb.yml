@@ -1,0 +1,12 @@
+apiVersion: 1
+
+datasources:
+  - name: Ventilators
+    type: influxdb
+    access: proxy
+    database: ventilators
+    user: ${GF_TSDB_USER}
+    password: ${GF_TSDB_PASSWORD}
+    url: http://tsdb:8086
+    jsonData:
+      httpMode: GET

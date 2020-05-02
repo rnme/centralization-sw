@@ -1,0 +1,13 @@
+# Variables de entorno de Docker Compose
+.env
+
+# Archivos de entorno de desarrollo
+.vagrant
+
+# Archivos autogenerados por Python
+**/__pycache__
+*.py[cod]
+*$py.class
+
+# Archivos autogenerados por Ansible
+*.retry

@@ -1,0 +1,8 @@
+all:
+  hosts:
+    default:
+      ansible_connection: local
+  children:
+    monitoring_servers:
+      hosts:
+        default:

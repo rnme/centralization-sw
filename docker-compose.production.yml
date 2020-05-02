@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  dashboard:
+    environment:
+      GF_TSDB_PASSWORD: ${TSDB_USER_PASSWORD}
+
+  dashboard-initializer:
+    environment:
+      DASHBOARD_INITIALIZER_ADMIN_PASSWORD: ${DASHBOARD_ADMIN_PASSWORD}
+
+  tsdb:
+    environment:
+      INFLUXDB_ADMIN_PASSWORD: ${TSDB_ADMIN_PASSWORD}
+      INFLUXDB_USER_PASSWORD: ${TSDB_USER_PASSWORD}
+
+  receiver:
+    environment:
+      RECEIVER_TSDB_PASSWORD: ${TSDB_USER_PASSWORD}
+
+  watchdog:
+    environment:
+      WATCHDOG_TSDB_PASSWORD: ${TSDB_USER_PASSWORD}
