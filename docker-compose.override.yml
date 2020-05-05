@@ -19,3 +19,14 @@ services:
   watchdog:
     volumes:
       - ./watchdog:/app
+
+  ventilators-mock:
+    build: ./ventilators-mock
+    image: ventilators-mock
+    container_name: ventilators-mock
+    restart: always
+    depends_on:
+      - receiver
+    environment:
+      VENTILATORS_MOCK_RECEIVER_HOST: receiver
+      VENTILATORS_MOCK_RECEIVER_PORT: 5000

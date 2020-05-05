@@ -3,6 +3,7 @@
 
 # Archivos de entorno de desarrollo
 .vagrant
+*.log
 
 # Archivos autogenerados por Python
 **/__pycache__
