@@ -90,9 +90,7 @@ docker-compose up
 
 El servicio de recepción de datos se puede acceder en http://localhost:5000, mientras que el tablero de monitoreo se encuentra en http://localhost:3000.
 
-### Simulación de respiradores
-
-El script `ventilators-mock.sh` se puede usar para tener datos de prueba de respiradores. El script ingresa periódicamente datos de prueba de respiradores en la base de datos, los cuales pueden ser útiles para tener datos para mostrar en tiempo real en el tablero.
+Junto con los servicios de los respiradores, en el entorno de desarrollo se levanta un proceso que simula la actividad de 49 respiradores, con identificadores del 2 al 50. Se recomienda usar el respirador de identificador 1 para pruebas.
 
 ## Despliegue
 
