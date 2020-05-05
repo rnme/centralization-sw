@@ -57,6 +57,17 @@ def measurement(ventilator_id):
     )
     return ('', 204)
 
+@app.route('/reset', methods=['POST'])
+def reset():
+    InfluxDBClient(
+            os.environ['RECEIVER_TSDB_HOST'],
+            int(os.environ['RECEIVER_TSDB_PORT']),
+            os.environ['RECEIVER_TSDB_USER'],
+            os.environ['RECEIVER_TSDB_PASSWORD'],
+            os.environ['RECEIVER_TSDB_DB']
+    ).delete_series(measurement='ventilator_measurement')
+    return ('', 204)
+
 @app.errorhandler(BadRequestError)
 def handle_bad_request(e):
     return make_response(

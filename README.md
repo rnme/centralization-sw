@@ -26,7 +26,7 @@ El subsistema de adquisición está dividido en dos módulos, los cuales se enca
 
 El receptor se implementa con una API REST a la cual el dispositivo móvil usado como control remoto de cada respirador reporta periódicamente los datos del estado actual del respirador.
 
-La API implementa un único método, `POST /ventilators/:id/measurements`, el cual recibe un objeto JSON con el siguiente formato en el cuerpo del mensaje:
+Para la recepción, la API implementa un único método, `POST /ventilators/:id/measurements`, el cual recibe un objeto JSON con el siguiente formato en el cuerpo del mensaje:
 ```
 {
   "status": 0,
@@ -46,6 +46,8 @@ El parámetro del cuerpo `:id` corresponde al número de cama del respirador que
 * `vc`: *(Entero.)* Volumen controlado (*VC*), medido en mililitros (ml).
 * `fio2`: *(Entero.)* Fracción de oxígeno inspirado (*FiO2*), medido en porcentaje (%).
 * `peep`: *(Entero.)* Presión de final de espiración positiva (*PEEP*), medido en centímetros de agua (cmH2O).
+
+Existe un método adicional, `POST /reset`, que permite borrar todos los datos de la base de datos. Esto puede ser útil cuando figuran muchos respiradores desconectados en el tablero debido a que no están siendo usados actualmente.
 
 #### Watchdog
 
