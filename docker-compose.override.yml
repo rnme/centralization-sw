@@ -24,6 +24,7 @@ services:
     build: ./ventilators-mock
     image: ventilators-mock
     container_name: ventilators-mock
+    command: ["./ventilators-mock.sh", "--count", "50", "--exclude", "1", "--exclude", "2"]
     restart: always
     depends_on:
       - receiver
