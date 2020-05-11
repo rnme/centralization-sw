@@ -1,9 +1,11 @@
 import os
 from flask import Flask, request, make_response, jsonify
+from flask_cors import CORS
 from influxdb import InfluxDBClient
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
 
 class BadRequestError(Exception):
     pass
