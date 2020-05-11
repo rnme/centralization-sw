@@ -92,7 +92,7 @@ docker-compose up
 
 El servicio de recepción de datos se puede acceder en http://localhost:5000, mientras que el tablero de monitoreo se encuentra en http://localhost:3000.
 
-Junto con los servicios de los respiradores, en el entorno de desarrollo se levanta un proceso que simula la actividad de 49 respiradores, con identificadores del 2 al 50. Se recomienda usar el respirador de identificador 1 para pruebas.
+Junto con los servicios de los respiradores, en el entorno de desarrollo se levanta un proceso que simula la actividad de 23 respiradores, con identificadores del 3 al 25. Se recomienda usar los respiradores de identificador 1 y 2 para pruebas.
 
 ## Despliegue
 
