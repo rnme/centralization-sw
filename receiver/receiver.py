@@ -18,9 +18,12 @@ class Measurement:
             self.__fr = int(params['fr'])
             self.__ie = int(params['ie'])
             self.__pause = int(params['pause'])
+            self.__p_pulm_max = int(params['pPulmMax'])
+            self.__p_plate = int(params['pPlate'])
             self.__vc = int(params['vc'])
             self.__fio2 = int(params['fio2'])
             self.__peep = int(params['peep'])
+            self.__crs = int(params['crs'])
         except KeyError as error:
             raise BadRequestError(
                     f'Debe indicar un valor para el campo {str(error)}.'
@@ -32,9 +35,12 @@ class Measurement:
                 'fr': self.__fr,
                 'ie': self.__ie,
                 'pause': self.__pause,
+                'pPulmMax': self.__p_pulm_max,
+                'pPlate': self.__p_plate,
                 'vc': self.__vc,
                 'fio2': self.__fio2,
-                'peep': self.__peep
+                'peep': self.__peep,
+                'crs': self.__crs
         }
 
 @app.route('/ventilators/<ventilator_id>/measurements', methods=['POST'])

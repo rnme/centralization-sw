@@ -37,11 +37,14 @@ do
     FR=12
     IE=3
     PAUSE=150
+    P_PULM_MAX=50
+    P_PLATE=50
     VC=$(((RANDOM % 50) + 425))
     FIO2=50
     PEEP=$(( RANDOM % 25 ))
-    echo Reportando para el respirador $((VENTILATOR)): { status: $((STATUS)), fr: $((FR)), ie: $((IE)), pause: $((PAUSE)), vc: $((VC)), fio2: $((FIO2)), peep: $((PEEP)) }
-    curl -H "Content-Type: application/json" -X POST --silent --show-error http://$VENTILATORS_MOCK_RECEIVER_HOST:$VENTILATORS_MOCK_RECEIVER_PORT/ventilators/$VENTILATOR/measurements -d "{ \"status\": $((STATUS)), \"fr\": $((FR)), \"ie\": $((IE)), \"pause\": $((PAUSE)), \"vc\": $((VC)), \"fio2\": $((FIO2)), \"peep\": $((PEEP)) }"
+    CRS=1
+    echo Reportando para el respirador $((VENTILATOR)): { status: $((STATUS)), fr: $((FR)), ie: $((IE)), pause: $((PAUSE)), pPulmMax: $((P_PULM_MAX)), pPlate: $((P_PLATE)), vc: $((VC)), fio2: $((FIO2)), peep: $((PEEP)), crs: $((CRS)) }
+    curl -H "Content-Type: application/json" -X POST --silent --show-error http://$VENTILATORS_MOCK_RECEIVER_HOST:$VENTILATORS_MOCK_RECEIVER_PORT/ventilators/$VENTILATOR/measurements -d "{ \"status\": $((STATUS)), \"fr\": $((FR)), \"ie\": $((IE)), \"pause\": $((PAUSE)), \"pPulmMax\": $((P_PULM_MAX)), \"pPlate\": $((P_PLATE)), \"vc\": $((VC)), \"fio2\": $((FIO2)), \"peep\": $((PEEP)), \"crs\": $((CRS)) }"
   done
   sleep 5
 done
