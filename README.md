@@ -33,9 +33,12 @@ Para la recepción, la API implementa un único método, `POST /ventilators/:id/
   "fr": 0,
   "ie": 0,
   "pause": 0,
+  "pPulmMax": 0,
+  "pPlate": 0,
   "vc": 0,
   "fio2": 0,
-  "peep": 0
+  "peep": 0,
+  "crs": 0
 }
 ```
 El parámetro del cuerpo `:id` corresponde al número de cama del respirador que se está reportando. Los parámetros del cuerpo del mensaje son:
@@ -43,9 +46,12 @@ El parámetro del cuerpo `:id` corresponde al número de cama del respirador que
 * `fr`: *(Entero.)* Frecuencia de respiración (*FR*) en respiraciones por minuto (rpm).
 * `i:e`: *(Entero.)* Relación de el tiempo de inspiración sobre el tiempo de expiración (*I:E*). Se debe ingresar el valor del denominador, asumiendo una inspiración de tiempo 1.
 * `pause`: *(Entero.)* Duración de pausa entre una inspiración y su correspondiente expiración (*Pausa inspiración*), medido en milisegundos (ms).
+* `pPulmMax`: *(Entero.)* Presión de pulmón máxima, medida en centímetros de agua (cmH2O).
+* `pPlate`: *(Entero.)* Presión plateau, medida en centímetros de agua (cmH2O).
 * `vc`: *(Entero.)* Volumen controlado (*VC*), medido en mililitros (ml).
 * `fio2`: *(Entero.)* Fracción de oxígeno inspirado (*FiO2*), medido en porcentaje (%).
-* `peep`: *(Entero.)* Presión de final de espiración positiva (*PEEP*), medido en centímetros de agua (cmH2O).
+* `peep`: *(Entero.)* Presión de final de espiración positiva (*PEEP*), medida en centímetros de agua (cmH2O).
+* `crs`: *(Entero.)* Compliance pulmonar, medida en mililitros por centímetro de agua (ml/cmH2O).
 
 Existe un método adicional, `POST /reset`, que permite borrar todos los datos de la base de datos. Esto puede ser útil cuando figuran muchos respiradores desconectados en el tablero debido a que no están siendo usados actualmente.
 
