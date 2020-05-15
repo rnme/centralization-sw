@@ -36,7 +36,7 @@ do
     STATUS=0
     FR=12
     IE=3
-    PAUSE=150
+    PAUSE=60
     P_PULM_MAX=50
     P_PLATE=50
     VC=$(((RANDOM % 50) + 425))
