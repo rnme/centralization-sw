@@ -110,4 +110,4 @@ Una vez configurado todo, se puede desplegar la aplicación localmente con el sc
 
 ## Agradecimientos
 
-El desarrollo de este sistema de monitoreo fue posible gracias a la ayuda de Martín Inzaurralde de la empresa HG, cuya experiencia en proyectos similares fue un insumo fundamental para el diseño de la arquitectura de la solución.
+El desarrollo de este sistema de monitoreo fue posible gracias a la ayuda de @minzaurralde, cuya experiencia en proyectos similares fue un insumo fundamental para el diseño de la arquitectura de la solución.
